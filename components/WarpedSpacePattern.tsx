@@ -87,7 +87,7 @@ export default function WarpedSpacePattern() {
 
   return (
     <article 
-      className="relative overflow-hidden"
+      className="relative overflow-hidden md:pr-[60px]"
       style={{
         position: 'relative',
         boxShadow: 'inset 0 0 0 1px currentColor',

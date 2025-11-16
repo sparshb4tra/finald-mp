@@ -4,7 +4,7 @@ export default function MetricsChart() {
   const metrics = [
     { label: 'Privacy Score', local: 100, industry: 15 },
     { label: 'Data Control', local: 100, industry: 20 },
-    { label: 'Speed', local: 95, industry: 15 },
+    { label: 'Speed', local: 60, industry: 90 },
     { label: 'Cost Efficiency', local: 100, industry: 35 },
     { label: 'Offline', local: 100, industry: 0 },
     { label: 'User Trust', local: 95, industry: 45 },
@@ -33,8 +33,8 @@ export default function MetricsChart() {
             {metric.label}
           </div>
 
-          <div className="flex items-center gap-4 w-full">
-            <div className="relative w-full h-10 bg-transparent border border-[rgb(237,254,193)] overflow-hidden">
+          <div className="flex items-center gap-4 flex-1">
+            <div className="relative flex-1 h-10 bg-transparent border border-[rgb(237,254,193)] overflow-hidden">
               <div 
                 className="h-full bg-[rgb(237,254,193)] flex items-center justify-end pr-3 transition-all duration-700 rounded-none"
                 style={{ width: `${localWidth}%`, minWidth: '40px' }}
@@ -45,7 +45,7 @@ export default function MetricsChart() {
               </div>
             </div>
 
-            <div className="relative w-28 h-10 bg-transparent border border-[rgb(237,254,193)]/70 overflow-hidden">
+            <div className="relative flex-1 h-10 bg-transparent border border-[rgb(237,254,193)]/70 overflow-hidden">
               <div 
                 className="h-full bg-[rgb(237,254,193)]/60 flex items-center justify-end pr-3 transition-all duration-700 rounded-none"
                 style={{ width: `${industryWidth}%`, minWidth: '40px' }}

@@ -14,31 +14,6 @@ export default function Home() {
     }}>
       <DownloadButton />
 
-      <div className="hidden md:flex fixed left-16 top-0 bottom-0 w-[80px] items-center justify-center z-30">
-        <p 
-          className="text-4xl md:text-5xl tracking-wide text-[rgb(237,254,193)]/90 font-script italic select-none whitespace-nowrap"
-          style={{
-            transform: 'rotate(-90deg)',
-            transformOrigin: 'center'
-          }}
-        >
-          powered by ollama • works offline • free forever
-        </p>
-      </div>
-
-      {/* Mobile vertical text - left side of screen */}
-      <div className="md:hidden fixed left-1 top-0 bottom-0 w-[50px] flex items-center justify-center z-30">
-        <p 
-          className="text-4xl tracking-wide text-[rgb(237,254,193)]/90 font-script italic select-none whitespace-nowrap"
-          style={{
-            transform: 'rotate(-90deg)',
-            transformOrigin: 'center'
-          }}
-        >
-          powered by ollama • works offline • free forever
-        </p>
-      </div>
-
       <div className="hidden md:flex fixed right-[60px] top-0 bottom-0 w-[400px] border-l border-r border-[rgb(237,254,193)] z-30" style={{ 
         borderColor: 'color(display-p3 0.931 0.996 0.755)',
         borderWidth: '1px',
@@ -63,6 +38,20 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* Right side text - between + bar and screen edge */}
+      <div className="hidden md:flex fixed right-0 top-0 bottom-0 w-[60px] items-center justify-center z-30 overflow-hidden">
+        <p 
+          className="text-4xl md:text-5xl tracking-wide text-[rgb(237,254,193)]/80 font-script italic select-none whitespace-nowrap"
+          style={{
+            transform: 'rotate(90deg)',
+            transformOrigin: 'center'
+          }}
+        >
+          • powered by ollama • works offline • free forever
+        </p>
+      </div>
+
       <section className="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden z-10 select-none pt-28 md:pt-0 pb-0 md:pb-0" style={{ marginTop: 0, marginBottom: 0 }}>
         <div className="w-full max-w-4xl mx-auto px-4 py-0 md:py-20 md:px-6 md:pr-[480px] md:pl-12 pb-0 md:pb-0">
           <div className="space-y-4 md:space-y-20 text-center md:text-left flex flex-col items-center md:items-start">

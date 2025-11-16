@@ -701,7 +701,7 @@ export default function PatternLibrary({ randomize = false, seed }: PatternLibra
 
   return (
     <div className="w-full py-4 md:py-8 relative z-10" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
-      <div className="w-full px-3 md:px-6">
+      <div className="w-full px-3 md:px-6 md:pr-[85px]">
         <style dangerouslySetInnerHTML={{__html: `
           .pattern-grid-mobile {
             grid-template-columns: repeat(${mobileCols}, 1fr);

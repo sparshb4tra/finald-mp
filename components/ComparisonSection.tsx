@@ -47,14 +47,46 @@ export default function ComparisonSection() {
   ]
 
   return (
-    <div id="page-2" className="relative min-h-[400px] md:min-h-[800px] pb-8 md:pb-20 md:pr-[480px] select-none">
+    <div id="page-2" className="relative min-h-[400px] md:min-h-[800px] pb-8 md:pb-20 md:pr-[480px] lg:pr-[480px] select-none">
       <h2 className="text-2xl md:text-3xl md:text-4xl font-serif font-bold tracking-tight mb-8 md:mb-12 text-center">
         Why <span className="font-script italic">Local AI  </span>   Chat?
       </h2>
-      
-      {/* Desktop Metrics Chart */}
-      <div className="hidden md:block absolute right-[470px] top-[50px] w-[480px] p-6 z-20">
-        <MetricsChart />
+
+      {/* Mobile and Small Desktop PostItNotes - Stacked (md to lg screens) */}
+      <div className="md:block lg:hidden mb-8" style={{ 
+        minHeight: '800px',
+        overflow: 'hidden',
+        position: 'relative'
+      }}>
+        <div className="flex flex-col items-center mx-auto px-4" style={{
+          maxWidth: '100%',
+          width: '100%'
+        }}>
+          {shuffledTitles.length > 0 && shuffledTitles.map((title, index) => {
+            const variant: 'beige' | 'blue' = [0, 3, 4].includes(index) ? 'blue' : 'beige'
+            const position = { x: 0, y: mobilePositions[index]?.y || 0, rotation: mobilePositions[index]?.rotation || 0 }
+            return (
+              <div 
+                key={`stacked-${title}-${index}`} 
+                className="relative flex justify-center"
+                style={{
+                  marginTop: index === 0 ? '0' : '-60px',
+                  zIndex: 15 + index,
+                  width: '280px',
+                  overflow: 'hidden'
+                }}
+              >
+                <PostItNote
+                  title={title}
+                  variant={variant}
+                  rotation={position.rotation}
+                  position={{ x: position.x, y: position.y }}
+                  mobile={true}
+                />
+              </div>
+            )
+          })}
+        </div>
       </div>
 
       {/* Mobile PostItNotes - Stacked FIRST */}
@@ -64,7 +96,7 @@ export default function ComparisonSection() {
           const position = mobilePositions[index] || { x: 0, y: 0, rotation: 0 }
           return (
             <div 
-              key={`${title}-${index}`} 
+              key={`mobile-${title}-${index}`} 
               className="relative"
               style={{
                 marginTop: index === 0 ? '0' : '-60px',
@@ -83,18 +115,23 @@ export default function ComparisonSection() {
         })}
       </div>
 
+      {/* Small Desktop Metrics Chart - AFTER PostItNotes (md to lg screens only) */}
+      <div className="hidden md:block lg:hidden">
+        <MetricsChart />
+      </div>
+
       {/* Mobile Metrics Chart - AFTER PostItNotes */}
       <div className="md:hidden">
         <MetricsChart />
       </div>
 
-      {/* Desktop PostItNotes - Absolute positioned */}
+      {/* Large Desktop PostItNotes - Absolute positioned (only on lg screens and above) */}
       {shuffledTitles.length > 0 && shuffledTitles.map((title, index) => {
         const position = postItPositions[index] || { x: 100, y: 100, rotation: 0 }
         const variant: 'beige' | 'blue' = [0, 3, 4].includes(index) ? 'blue' : 'beige'
         
         return (
-          <div key={`desktop-${title}-${index}`} className="hidden md:block">
+          <div key={`desktop-${title}-${index}`} className="hidden lg:block">
             <PostItNote
               title={title}
               variant={variant}
@@ -104,6 +141,13 @@ export default function ComparisonSection() {
           </div>
         )
       })}
+
+      {/* Large Desktop Metrics Chart - AFTER PostItNotes (only on lg screens and above) */}
+      <div className="hidden lg:block mt-[900px] mb-8">
+        <div className="max-w-2xl mx-auto">
+          <MetricsChart />
+        </div>
+      </div>
     </div>
   )
 }

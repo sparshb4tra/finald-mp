@@ -41,7 +41,7 @@ export default function Footer() {
 
             <Link
               href="/terms"
-              className="text-[rgb(237,254,193)]/80 hover:text-[rgb(237,254,193)] transition-colors duration-200 text-sm md:text-base"
+              className="text-[rgb(237,254,193)]/80 hover:text-[rgb(237,254,193)] transition-colors duration-200 text-sm md:text-base font-serif italic font-semibold"
             >
               Terms & Conditions
             </Link>

@@ -33,7 +33,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              By downloading, installing, or using Local AI Chat ("the Software"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, do not download, install, or use the Software.
+              By downloading, installing, or using Local AI Chat (&quot;the Software&quot;), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, do not download, install, or use the Software.
             </p>
           </section>
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
               2. Description of Service
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              Local AI Chat is a locally-run AI chat interface that operates entirely on your machine. The Software requires third-party dependencies including Ollama and Node.js to function. The Software is provided "as is" without any warranties or guarantees.
+              Local AI Chat is a locally-run AI chat interface that operates entirely on your machine. The Software requires third-party dependencies including Ollama and Node.js to function. The Software is provided &quot;as is&quot; without any warranties or guarantees.
             </p>
           </section>
 
@@ -86,7 +86,7 @@ export default function TermsPage() {
               5. Disclaimer of Warranties
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+              THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
               <li>Warranties of merchantability</li>

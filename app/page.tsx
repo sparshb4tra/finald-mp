@@ -52,8 +52,8 @@ export default function Home() {
         </p>
       </div>
 
-      <section className="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden z-10 select-none pt-28 md:pt-0 pb-0 md:pb-0" style={{ marginTop: 0, marginBottom: 0 }}>
-        <div className="w-full max-w-4xl mx-auto px-4 py-0 md:py-20 md:px-6 md:pr-[480px] md:pl-12 pb-0 md:pb-0">
+      <section className="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden z-10 select-none pt-28 md:pt-0 pb-0" style={{ marginTop: 0, marginBottom: 0 }}>
+        <div className="w-full max-w-4xl mx-auto px-4 py-0 md:py-20 md:px-6 md:pr-[480px] md:pl-12 pb-0">
           <div className="space-y-4 md:space-y-20 text-center md:text-left flex flex-col items-center md:items-start">
             <h1 className="text-4xl md:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-tight select-none mt-4 md:mt-0">
               Hey,

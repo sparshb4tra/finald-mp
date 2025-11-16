@@ -47,7 +47,7 @@ export default function ComparisonSection() {
   ]
 
   return (
-    <div id="page-2" className="relative min-h-[400px] md:min-h-[800px] pb-8 md:pb-20 md:pr-[480px] lg:pr-[480px] select-none">
+    <div id="page-2" className="relative min-h-[400px] md:min-h-[800px] pb-8 md:pb-20 md:pr-[480px] select-none">
       <h2 className="text-2xl md:text-3xl md:text-4xl font-serif font-bold tracking-tight mb-8 md:mb-12 text-center">
         Why <span className="font-script italic">Local AI  </span>   Chat?
       </h2>

@@ -33,7 +33,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              By downloading, installing, or using Local AI Chat (&quot;the Software&quot;), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, do not download, install, or use the Software.
+              By downloading, installing, or using this software application (including the downloadable package and all files, scripts, and components contained within), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, do not download, install, or use the application.
             </p>
           </section>
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
               2. Description of Service
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              Local AI Chat is a locally-run AI chat interface that operates entirely on your machine. The Software requires third-party dependencies including Ollama and Node.js to function. The Software is provided &quot;as is&quot; without any warranties or guarantees.
+              This application is a locally-run AI chat interface that operates entirely on your machine. The downloadable package contains the application files, startup scripts for different operating systems (.bat for Windows, .command for macOS, .sh for Linux), and related components. The software requires third-party dependencies including Ollama and Node.js to function. The software is provided &quot;as is&quot; without any warranties or guarantees.
             </p>
           </section>
 
@@ -51,16 +51,16 @@ export default function TermsPage() {
               3. License and Usage
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              The Software is provided free of charge. You are granted a non-exclusive, non-transferable license to download, install, and use the Software for personal or commercial purposes, subject to these Terms.
+              This software is provided free of charge. You are granted a non-exclusive, non-transferable license to download, install, and use the software for personal or commercial purposes, subject to these Terms.
             </p>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
               You may not:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
-              <li>Reverse engineer, decompile, or disassemble the Software</li>
-              <li>Remove or alter any copyright, trademark, or proprietary notices</li>
-              <li>Use the Software for any illegal or unauthorized purpose</li>
-              <li>Redistribute the Software without proper attribution</li>
+              <li>Reverse engineer, decompile, or disassemble the software</li>
+              <li>Remove or alter any copyright or proprietary notices</li>
+              <li>Use the software for any illegal or unauthorized purpose</li>
+              <li>Redistribute the software without proper attribution</li>
             </ul>
           </section>
 
@@ -69,7 +69,7 @@ export default function TermsPage() {
               4. Third-Party Dependencies
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              The Software requires Ollama and Node.js to function. These are third-party software components with their own terms and conditions. You are responsible for:
+              This software requires Ollama and Node.js to function. These are third-party software components with their own terms and conditions. You are responsible for:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
               <li>Downloading and installing Ollama and Node.js separately</li>
@@ -86,16 +86,16 @@ export default function TermsPage() {
               5. Disclaimer of Warranties
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+              THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
               <li>Warranties of merchantability</li>
               <li>Fitness for a particular purpose</li>
               <li>Non-infringement</li>
-              <li>Accuracy, reliability, or completeness of the Software</li>
+              <li>Accuracy, reliability, or completeness of the software</li>
             </ul>
             <p className="text-[rgb(237,254,193)]/90 mt-4">
-              We do not warrant that the Software will be uninterrupted, error-free, or secure, or that defects will be corrected.
+              We do not warrant that the software will be uninterrupted, error-free, or secure, or that defects will be corrected.
             </p>
           </section>
 
@@ -109,9 +109,9 @@ export default function TermsPage() {
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
               <li>Any indirect, incidental, special, consequential, or punitive damages</li>
               <li>Loss of profits, revenue, data, or use</li>
-              <li>Damages resulting from use or inability to use the Software</li>
+              <li>Damages resulting from use or inability to use the software</li>
               <li>Damages resulting from third-party dependencies (Ollama, Node.js)</li>
-              <li>Any damages exceeding the amount you paid for the Software (which is $0)</li>
+              <li>Any damages exceeding the amount you paid for the software (which is $0)</li>
             </ul>
             <p className="text-[rgb(237,254,193)]/90 mt-4">
               This limitation applies regardless of the theory of liability, whether in contract, tort, or otherwise.
@@ -123,7 +123,7 @@ export default function TermsPage() {
               7. Privacy and Data
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              The Software operates entirely locally on your machine. We do not collect, store, transmit, or have access to:
+              <strong className="font-semibold">Software Application:</strong> The downloadable software operates entirely locally on your machine. The software itself does not collect, store, transmit, or have access to:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
               <li>Your conversations or chat data</li>
@@ -131,8 +131,11 @@ export default function TermsPage() {
               <li>Any usage statistics or analytics</li>
               <li>Any data from your device</li>
             </ul>
-            <p className="text-[rgb(237,254,193)]/90 mt-4">
+            <p className="text-[rgb(237,254,193)]/90 mt-4 mb-4">
               All data processing occurs locally on your machine. You are responsible for the security and privacy of your local installation.
+            </p>
+            <p className="text-[rgb(237,254,193)]/90 mb-4">
+              <strong className="font-semibold">This Website:</strong> This website (the landing page) may collect standard web analytics data such as page views, visit duration, and general traffic patterns through our hosting provider (Vercel). This data is used solely for understanding website usage and improving the user experience. We do not collect personally identifiable information through this website.
             </p>
           </section>
 
@@ -141,13 +144,13 @@ export default function TermsPage() {
               8. Indemnification
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              You agree to indemnify, defend, and hold harmless the Software developers, contributors, and affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
+              You agree to indemnify, defend, and hold harmless the software developers, contributors, and affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-[rgb(237,254,193)]/90">
-              <li>Your use or misuse of the Software</li>
+              <li>Your use or misuse of the software</li>
               <li>Your violation of these Terms</li>
               <li>Your violation of any third-party rights</li>
-              <li>Any content or data you process using the Software</li>
+              <li>Any content or data you process using the software</li>
             </ul>
           </section>
 
@@ -156,7 +159,7 @@ export default function TermsPage() {
               9. Modifications to Terms
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              We reserve the right to modify these Terms at any time. Continued use of the Software after such modifications constitutes acceptance of the updated Terms. It is your responsibility to review these Terms periodically.
+              We reserve the right to modify these Terms at any time. Continued use of the software after such modifications constitutes acceptance of the updated Terms. It is your responsibility to review these Terms periodically.
             </p>
           </section>
 
@@ -165,7 +168,7 @@ export default function TermsPage() {
               10. Termination
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              We reserve the right to terminate or suspend your access to the Software at any time, without prior notice, for any reason, including violation of these Terms. Upon termination, you must cease all use of the Software and delete all copies.
+              We reserve the right to terminate or suspend your access to the software at any time, without prior notice, for any reason, including violation of these Terms. Upon termination, you must cease all use of the software and delete all copies.
             </p>
           </section>
 
@@ -174,7 +177,7 @@ export default function TermsPage() {
               11. Governing Law
             </h2>
             <p className="text-[rgb(237,254,193)]/90 mb-4">
-              These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising from these Terms or the Software shall be resolved in the appropriate jurisdiction.
+              These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising from these Terms or the software shall be resolved in the appropriate jurisdiction.
             </p>
           </section>
 

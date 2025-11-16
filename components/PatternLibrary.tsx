@@ -629,7 +629,7 @@ export default function PatternLibrary({ randomize = false, seed }: PatternLibra
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 800)
     }
     checkMobile()
     window.addEventListener('resize', checkMobile)
@@ -707,7 +707,7 @@ export default function PatternLibrary({ randomize = false, seed }: PatternLibra
             grid-template-columns: repeat(${mobileCols}, 1fr);
             grid-auto-rows: minmax(80px, 1fr);
           }
-          @media (min-width: 768px) {
+          @media (min-width: 800px) {
             .pattern-grid-mobile {
               grid-template-columns: repeat(${desktopCols}, 1fr);
               grid-template-rows: repeat(2, 1fr);

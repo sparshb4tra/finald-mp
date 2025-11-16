@@ -9,7 +9,7 @@ Modern landing page for Local AI Chat built with Next.js, TypeScript, and Tailwi
 ## Preview
 
 ![Desktop Preview](./public/preview.png)
-
+![Mobile Preview](./public/preview-mobile.png)
 ## Features
 
 - Responsive design (desktop & mobile)

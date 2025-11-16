@@ -5,13 +5,15 @@ interface PostItNoteProps {
   variant?: 'beige' | 'blue'
   rotation?: number
   position?: { x: number; y: number }
+  mobile?: boolean
 }
 
 export default function PostItNote({ 
   title, 
   variant = 'beige',
   rotation = 0,
-  position
+  position,
+  mobile = false
 }: PostItNoteProps) {
   const cream = 'rgb(237, 254, 193)'
   const navy = '#0A1E5E'
@@ -20,6 +22,45 @@ export default function PostItNote({
   const bgColor = isBeige ? cream : navy
   const textColor = isBeige ? navy : cream
   const naturalRotation = rotation || 0
+  
+  if (mobile) {
+    return (
+      <div
+        className="relative w-full flex justify-center"
+        style={{
+          transform: `translate(${position?.x || 0}px, ${position?.y || 0}px) rotate(${naturalRotation}deg)`,
+          transformOrigin: 'center',
+          zIndex: 15
+        }}
+      >
+        <div
+          className="px-6 py-6"
+          style={{
+            backgroundColor: bgColor,
+            color: textColor,
+            width: '280px',
+            height: '280px',
+            aspectRatio: '1',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: 'var(--font-ios)',
+            fontSize: '1.5rem',
+            fontWeight: '700',
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1',
+            textAlign: 'center',
+            border: 'none',
+            borderRadius: '0px',
+            position: 'relative',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+          }}
+        >
+          <span className="select-none">{title}</span>
+        </div>
+      </div>
+    )
+  }
   
   return (
     <div

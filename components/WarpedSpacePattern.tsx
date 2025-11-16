@@ -1,9 +1,19 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function WarpedSpacePattern() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -85,7 +95,7 @@ export default function WarpedSpacePattern() {
         overflow: 'hidden',
         width: '100vw',
         maxWidth: 'none',
-        marginLeft: 'calc(-38vw + 50%)',
+        marginLeft: isMobile ? '0' : 'calc(-38vw + 50%)',
         marginRight: 0,
         left: 0,
         right: 0,

@@ -37,27 +37,71 @@ export default function ComparisonSection() {
     { x: 540, y: 480, rotation: 3 }
   ]
 
+  const mobilePositions = [
+    { x: 0, y: 0, rotation: -3 },
+    { x: 8, y: -20, rotation: 2 },
+    { x: -6, y: -20, rotation: -2 },
+    { x: 10, y: -20, rotation: 3 },
+    { x: -8, y: -20, rotation: -1 },
+    { x: 6, y: -20, rotation: 1 }
+  ]
+
   return (
-    <div id="page-2" className="relative min-h-[800px] pr-[480px] pb-20 select-none">
-      <h2 className="text-3xl md:text-4xl font-serif font-bold tracking-tight mb-12 text-center">
+    <div id="page-2" className="relative min-h-[400px] md:min-h-[800px] pb-8 md:pb-20 md:pr-[480px] select-none">
+      <h2 className="text-2xl md:text-3xl md:text-4xl font-serif font-bold tracking-tight mb-8 md:mb-12 text-center">
         Why <span className="font-script italic">Local AI  </span>   Chat?
       </h2>
       
-      <div className="absolute right-[470px] top-[50px] w-[480px] p-6 z-20">
+      {/* Desktop Metrics Chart */}
+      <div className="hidden md:block absolute right-[470px] top-[50px] w-[480px] p-6 z-20">
         <MetricsChart />
       </div>
+
+      {/* Mobile PostItNotes - Stacked FIRST */}
+      <div className="md:hidden max-w-full mx-auto mb-8" style={{ minHeight: '800px' }}>
+        {shuffledTitles.length > 0 && shuffledTitles.map((title, index) => {
+          const variant: 'beige' | 'blue' = [0, 3, 4].includes(index) ? 'blue' : 'beige'
+          const position = mobilePositions[index] || { x: 0, y: 0, rotation: 0 }
+          return (
+            <div 
+              key={`${title}-${index}`} 
+              className="relative"
+              style={{
+                marginTop: index === 0 ? '0' : '-60px',
+                zIndex: 15 + index
+              }}
+            >
+              <PostItNote
+                title={title}
+                variant={variant}
+                rotation={position.rotation}
+                position={{ x: position.x, y: position.y }}
+                mobile={true}
+              />
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Mobile Metrics Chart - AFTER PostItNotes */}
+      <div className="md:hidden">
+        <MetricsChart />
+      </div>
+
+      {/* Desktop PostItNotes - Absolute positioned */}
       {shuffledTitles.length > 0 && shuffledTitles.map((title, index) => {
         const position = postItPositions[index] || { x: 100, y: 100, rotation: 0 }
         const variant: 'beige' | 'blue' = [0, 3, 4].includes(index) ? 'blue' : 'beige'
         
         return (
-          <PostItNote
-            key={`${title}-${index}`}
-            title={title}
-            variant={variant}
-            rotation={position.rotation}
-            position={{ x: position.x, y: position.y }}
-          />
+          <div key={`desktop-${title}-${index}`} className="hidden md:block">
+            <PostItNote
+              title={title}
+              variant={variant}
+              rotation={position.rotation}
+              position={{ x: position.x, y: position.y }}
+            />
+          </div>
         )
       })}
     </div>

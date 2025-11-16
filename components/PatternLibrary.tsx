@@ -625,6 +625,16 @@ interface Pattern {
 
 export default function PatternLibrary({ randomize = false, seed }: PatternLibraryProps) {
   const [patterns, setPatterns] = useState<Pattern[]>([])
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     let patternList = Object.keys(drawPatterns).map((name, i) => ({
@@ -685,16 +695,32 @@ export default function PatternLibrary({ randomize = false, seed }: PatternLibra
 
   const totalPatterns = patterns.length
   const colsPerRow = totalPatterns > 0 ? Math.ceil(totalPatterns / 2) : 17
+  const mobileCols = 4 // Mobile: 4 columns for 2 rows of 4 patterns each
+  const desktopCols = colsPerRow // Desktop: original columns
+  const mobilePatternCount = mobileCols * 2 // Show 8 patterns on mobile (2 rows x 4 columns)
 
   return (
-    <div className="w-full py-8 relative z-10" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
-      <div className="w-full px-6">
-        <div className="grid gap-2" style={{ 
-          gridTemplateColumns: `repeat(${colsPerRow}, 1fr)`,
-          gridTemplateRows: 'repeat(2, 1fr)',
-          maxWidth: '100%'
-        }}>
-          {patterns.slice(0, colsPerRow * 2).map((pattern) => (
+    <div className="w-full py-4 md:py-8 relative z-10" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+      <div className="w-full px-3 md:px-6">
+        <style dangerouslySetInnerHTML={{__html: `
+          .pattern-grid-mobile {
+            grid-template-columns: repeat(${mobileCols}, 1fr);
+            grid-auto-rows: minmax(80px, 1fr);
+          }
+          @media (min-width: 768px) {
+            .pattern-grid-mobile {
+              grid-template-columns: repeat(${desktopCols}, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+            }
+          }
+        `}} />
+        <div 
+          className="pattern-grid-mobile grid gap-2 md:gap-2"
+          style={{ 
+            maxWidth: '100%'
+          }}
+        >
+          {(isMobile ? patterns.slice(0, mobilePatternCount) : patterns.slice(0, desktopCols * 2)).map((pattern) => (
             <div 
               key={pattern.id}
               className="relative overflow-hidden border transition-colors cursor-pointer pointer-events-auto"

@@ -42,16 +42,16 @@ export default function DownloadButton() {
   }
 
   return (
-    <div className="fixed top-6 left-6 z-50">
+    <div className="fixed top-2 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 md:top-8 z-50">
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-[rgb(237,254,193)] text-[#0A1E5E] px-6 py-3 font-bold flex items-center gap-2 hover:bg-[rgb(237,254,193)]/90 transition-all duration-200 border border-[rgb(237,254,193)]"
+          className="bg-[rgb(237,254,193)] text-[#0A1E5E] px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold flex items-center gap-2 hover:bg-[rgb(237,254,193)]/90 transition-all duration-200 border border-[rgb(237,254,193)]"
           style={{ borderRadius: '0px' }}
         >
-          <Download className="w-5 h-5" />
+          <Download className="w-4 h-4 md:w-5 md:h-5" />
           <span>Download</span>
-          <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`w-3 h-3 md:w-4 md:h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
         </button>
 
         {isOpen && (

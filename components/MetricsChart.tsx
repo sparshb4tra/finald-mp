@@ -20,7 +20,7 @@ export default function MetricsChart() {
       <h3 className="text-2xl font-serif font-bold mb-6 text-center text-[rgb(237,254,193)]">
         Performance Metrics
       </h3>
-      <div className="w-full border-2 border-[rgb(237,254,193)] p-6 rounded-none">
+      <div className="w-full border-0 md:border-2 border-[rgb(237,254,193)] p-6 rounded-none">
   <div className="space-y-6">
 
     {metrics.map((metric, index) => {

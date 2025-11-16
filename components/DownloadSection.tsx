@@ -72,16 +72,16 @@ export default function DownloadSection() {
   const navy = '#0A1E5E'
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-12 pb-20 select-none">
-      <div className="text-center space-y-6">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-[rgb(237,254,193)] mb-4">
+    <div className="w-full max-w-5xl mx-auto space-y-8 md:space-y-12 pb-12 md:pb-20 select-none px-4 md:px-0">
+      <div className="text-center space-y-4 md:space-y-6">
+        <h2 className="text-3xl md:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[rgb(237,254,193)] mb-2 md:mb-4">
           Get Started
         </h2>
-        <p className="text-lg font-ios text-[rgb(237,254,193)]/80">
+        <p className="text-base md:text-lg font-ios text-[rgb(237,254,193)]/80">
           Choose your platform
         </p>
         
-        <div className="flex flex-wrap justify-center gap-6 mt-10">
+        <div className="flex flex-row flex-wrap md:flex-row justify-center gap-2 md:gap-3 mt-6 md:mt-8">
           {Object.entries(downloadLinks).map(([key, link]) => {
             const os = key as 'windows' | 'mac' | 'linux'
             const isHovered = hoveredOS === os
@@ -93,7 +93,7 @@ export default function DownloadSection() {
                 onClick={() => handleOSClick(os)}
                 onMouseEnter={() => setHoveredOS(os)}
                 onMouseLeave={() => setHoveredOS(null)}
-                className="min-w-[240px] h-auto py-6 flex flex-col gap-3 text-xl transition-all duration-300 border-2"
+                className="w-auto md:w-auto md:min-w-[140px] h-auto py-2 md:py-2.5 px-3 md:px-3 flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-1.5 text-sm md:text-base transition-all duration-300 border-2"
                 style={{
                   backgroundColor: isSelected || isHovered ? cream : 'transparent',
                   color: isSelected || isHovered ? navy : cream,
@@ -104,13 +104,15 @@ export default function DownloadSection() {
                 }}
               >
                 <div style={{ color: isSelected || isHovered ? navy : cream }}>
-                  <OSIcon os={link.os} className="w-12 h-12" />
+                  <OSIcon os={link.os} className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <span className="text-5xl md:text-7xl font-bold select-none">
-                  {link.name}
-                </span>
-                <span className="text-sm font-normal opacity-80 select-none">{link.extension}</span>
-                <Download className="w-6 h-6 mt-1" />
+                <div className="flex flex-col md:flex-col items-start">
+                  <span className="text-sm md:text-lg font-bold select-none">
+                    {link.name}
+                  </span>
+                  <span className="text-xs font-normal opacity-80 select-none">{link.extension}</span>
+                </div>
+                <Download className="w-3.5 h-3.5 md:w-3.5 md:h-3.5 md:mt-0.5 md:mx-0" />
               </button>
             )
           })}
@@ -119,22 +121,22 @@ export default function DownloadSection() {
 
       {selectedOS && steps && (
         <div 
-          className="border-2 p-6 space-y-6"
+          className="border-2 p-4 md:p-6 space-y-4 md:space-y-6"
           style={{
             borderColor: cream,
             backgroundColor: `${navy}dd`,
             borderRadius: '0px'
           }}
         >
-          <h3 className="text-2xl font-serif font-bold text-[rgb(237,254,193)] flex items-center gap-3">
-            <Terminal className="w-6 h-6" />
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-[rgb(237,254,193)] flex items-center gap-2 md:gap-3">
+            <Terminal className="w-5 h-5 md:w-6 md:h-6" />
             Quick Setup Steps
           </h3>
           
-          <div className="space-y-4">
-            <div className="flex gap-4 items-start">
+          <div className="space-y-3 md:space-y-4">
+            <div className="flex gap-3 md:gap-4 items-start">
               <div 
-                className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-lg font-bold select-none"
+                className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-base md:text-lg font-bold select-none"
                 style={{
                   backgroundColor: cream,
                   color: navy,
@@ -143,14 +145,14 @@ export default function DownloadSection() {
               >
                 1
               </div>
-              <p className="text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-1">
+              <p className="text-sm md:text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-0.5 md:pt-1">
                 {steps.download}
               </p>
             </div>
             
-            <div className="flex gap-4 items-start">
+            <div className="flex gap-3 md:gap-4 items-start">
               <div 
-                className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-lg font-bold select-none"
+                className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-base md:text-lg font-bold select-none"
                 style={{
                   backgroundColor: cream,
                   color: navy,
@@ -159,14 +161,14 @@ export default function DownloadSection() {
               >
                 2
               </div>
-              <p className="text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-1">
+              <p className="text-sm md:text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-0.5 md:pt-1">
                 {steps.extract}
               </p>
             </div>
             
-            <div className="flex gap-4 items-start">
+            <div className="flex gap-3 md:gap-4 items-start">
               <div 
-                className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-lg font-bold select-none"
+                className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-base md:text-lg font-bold select-none"
                 style={{
                   backgroundColor: cream,
                   color: navy,
@@ -175,14 +177,14 @@ export default function DownloadSection() {
               >
                 3
               </div>
-              <p className="text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-1">
+              <p className="text-sm md:text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-0.5 md:pt-1">
                 {steps.prerequisites}
               </p>
             </div>
             
-            <div className="flex gap-4 items-start">
+            <div className="flex gap-3 md:gap-4 items-start">
               <div 
-                className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-lg font-bold select-none"
+                className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-base md:text-lg font-bold select-none"
                 style={{
                   backgroundColor: cream,
                   color: navy,
@@ -192,11 +194,11 @@ export default function DownloadSection() {
                 4
               </div>
               <div className="flex-1">
-                <p className="text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-1 mb-3">
+                <p className="text-sm md:text-base leading-relaxed text-[rgb(237,254,193)]/90 pt-0.5 md:pt-1 mb-2 md:mb-3">
                   {steps.run}
                 </p>
                 <div 
-                  className="p-4 font-mono text-sm code-snippet"
+                  className="p-3 md:p-4 font-mono text-xs md:text-sm code-snippet overflow-x-auto"
                   style={{
                     backgroundColor: navy,
                     color: cream,
@@ -213,33 +215,33 @@ export default function DownloadSection() {
       )}
 
       <div 
-        className="border-2 p-6"
+        className="hidden md:block border-2 p-4 md:p-6"
         style={{
           borderColor: cream,
           backgroundColor: `${navy}dd`,
           borderRadius: '0px'
         }}
       >
-        <h3 className="text-2xl font-serif font-bold text-[rgb(237,254,193)] mb-4 flex items-center gap-3">
-          <Terminal className="w-6 h-6" />
+        <h3 className="text-xl md:text-2xl font-serif font-bold text-[rgb(237,254,193)] mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
+          <Terminal className="w-5 h-5 md:w-6 md:h-6" />
           Quick Reference
         </h3>
         <div 
-          className="p-4 font-mono text-sm overflow-x-auto code-snippet"
+          className="p-3 md:p-4 font-mono text-xs md:text-sm overflow-x-auto code-snippet"
           style={{
             backgroundColor: navy,
             color: cream,
             border: `1px solid ${cream}`,
             borderRadius: '0px',
-            minHeight: '120px'
+            minHeight: '100px'
           }}
         >
           <div className="space-y-2">
             <div className="text-[rgb(237,254,193)]/60"># Pull AI model (works on all platforms)</div>
             <div className="text-[rgb(237,254,193)]">ollama pull dolphin-llama3</div>
-            <div className="mt-4 text-[rgb(237,254,193)]/60"># Verify Ollama installation</div>
+            <div className="mt-3 md:mt-4 text-[rgb(237,254,193)]/60"># Verify Ollama installation</div>
             <div className="text-[rgb(237,254,193)]">ollama --version</div>
-            <div className="mt-4 text-[rgb(237,254,193)]/60"># List installed models</div>
+            <div className="mt-3 md:mt-4 text-[rgb(237,254,193)]/60"># List installed models</div>
             <div className="text-[rgb(237,254,193)]">ollama list</div>
           </div>
         </div>

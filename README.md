@@ -1,6 +1,6 @@
 # Local AI Chat - Landing Page
 
-Modern landing page for Local AI Chat built with Next.js, TypeScript, and Tailwind CSS.
+Facilitating Private, Locally run LLMs. Take control.
 
 ## Live Demo
 

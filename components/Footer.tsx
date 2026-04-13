@@ -2,16 +2,13 @@
 
 import { Github } from 'lucide-react'
 import Link from 'next/link'
-import WarpedSpacePattern from './WarpedSpacePattern'
 
 export default function Footer() {
   return (
-    <footer className="md:pr-[480px] bg-[#0A1E5E] text-[rgb(237,254,193)]" style={{ 
+    <footer className="bg-[#0A1E5E] text-[rgb(237,254,193)] border-t border-[rgb(237,254,193)]/20" style={{ 
       background: 'color(display-p3 0.012 0.003 0.408)',
       color: 'color(display-p3 0.931 0.996 0.755)'
     }}>
-      <WarpedSpacePattern />
-      
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-10">
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6">
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6">
@@ -46,6 +43,14 @@ export default function Footer() {
               Terms & Conditions
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div className="border-t border-[rgb(237,254,193)]/20 overflow-hidden py-3">
+        <div className="animate-scroll whitespace-nowrap text-[rgb(237,254,193)]/85 text-sm md:text-base">
+          <span className="mx-8">Local AI Chat • private by design • built for serious workflows • powered by Ollama • works offline</span>
+          <span className="mx-8">Local AI Chat • private by design • built for serious workflows • powered by Ollama • works offline</span>
+          <span className="mx-8">Local AI Chat • private by design • built for serious workflows • powered by Ollama • works offline</span>
         </div>
       </div>
     </footer>

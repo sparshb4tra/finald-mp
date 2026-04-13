@@ -1,10 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import DownloadSection from '@/components/DownloadSection'
 import Footer from '@/components/Footer'
-import ComparisonSection from '@/components/ComparisonSection'
-import DownloadButton from '@/components/DownloadButton'
-import PatternLibrary from '@/components/PatternLibrary'
 
 export default function Home() {
   return (
@@ -12,131 +10,90 @@ export default function Home() {
       background: 'color(display-p3 0.012 0.003 0.408)',
       color: 'color(display-p3 0.931 0.996 0.755)'
     }}>
-      <DownloadButton />
-
-      <div className="hidden md:flex fixed right-[60px] top-0 bottom-0 w-[400px] border-l border-r border-[rgb(237,254,193)] z-30" style={{ 
-        borderColor: 'color(display-p3 0.931 0.996 0.755)',
-        borderWidth: '1px',
-        borderTop: 'none',
-        borderBottom: 'none'
-      }}>
-        <div className="w-full h-full grid gap-0" style={{
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          gridTemplateRows: 'repeat(200, 1fr)',
-        }}>
-          {Array.from({ length: 2400 }).map((_, index) => (
-            <div 
-              key={index} 
-              className="flex justify-center items-center pointer-events-auto"
-            >
-              <p 
-                className="particle-plus text-2xl font-bold text-white/20 cursor-default pointer-events-auto"
+      <section className="relative z-10 border-b border-[rgb(237,254,193)]/20">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 py-16 md:py-24">
+          <p className="text-[rgb(237,254,193)]/75 text-sm tracking-[0.18em] uppercase mb-6">Local AI Chat • Updated Release</p>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight">Hey,</h1>
+          <div className="mt-6 space-y-5 max-w-3xl">
+            <p className="text-2xl md:text-4xl tracking-tight font-ios leading-tight">
+              <span className="block">Tired of your</span>
+              <span className="text-yellow-300 font-semibold block">data being stolen?</span>
+              <span className="text-green-300 font-semibold block">Spied on?</span>
+              <span className="text-pink-300 font-semibold block">Tracked?</span>
+            </p>
+            <p className="text-base md:text-xl text-[rgb(237,254,193)]/90">
+              A local-first AI workspace for private teams and serious workflows.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="/downloads/local-ai.zip"
+                download
+                className="inline-flex items-center px-5 py-2.5 text-sm md:text-base font-bold border border-[rgb(237,254,193)] bg-[rgb(237,254,193)] text-[#0A1E5E] hover:bg-[rgb(237,254,193)]/90"
               >
-                +
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="hidden md:flex fixed right-0 top-0 bottom-0 w-[60px] items-center justify-center z-30 overflow-hidden">
-        <p 
-          className="text-4xl md:text-5xl tracking-wide text-[rgb(237,254,193)]/80 font-script italic select-none whitespace-nowrap"
-          style={{
-            transform: 'rotate(90deg)',
-            transformOrigin: 'center'
-          }}
-        >
-          • powered by ollama • works offline • free forever
-        </p>
-      </div>
-
-      <section className="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden z-10 select-none pt-28 md:pt-0 pb-0" style={{ marginTop: 0, marginBottom: 0 }}>
-        <div className="w-full max-w-4xl mx-auto px-4 py-0 md:py-20 md:px-6 md:pr-[480px] md:pl-12 pb-0">
-          <div className="space-y-4 md:space-y-20 text-center md:text-left flex flex-col items-center md:items-start">
-            <h1 className="text-4xl md:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-tight select-none mt-4 md:mt-0">
-              Hey,
-            </h1>
-            
-            <div className="space-y-6 md:space-y-6 max-w-2xl w-full mx-auto md:mx-0 mt-6 md:mt-0">
-              <p className="text-xl md:text-3xl md:text-4xl tracking-tight font-ios leading-tight select-none">
-                <span className="block mb-2">Tired of your</span>
-                <span 
-                  className="text-yellow-300 font-semibold block mt-2 transition-transform duration-500 ease-in-out cursor-default"
-                  style={{ 
-                    transformOrigin: 'left center',
-                    willChange: 'transform'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.01)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  }}
-                >
-                  data being stolen?
-                </span>
-                <span 
-                  className="text-green-300 font-semibold block mt-2 transition-transform duration-500 ease-in-out cursor-default"
-                  style={{ 
-                    transformOrigin: 'left center',
-                    willChange: 'transform'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.01)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  }}
-                >
-                  Spied on?
-                </span>
-                <span 
-                  className="text-pink-300 font-semibold block mt-2 transition-transform duration-500 ease-in-out cursor-default"
-                  style={{ 
-                    transformOrigin: 'left center',
-                    willChange: 'transform'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.01)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  }}
-                >
-                  Tracked?
-                </span>
-              </p>
-              <p className="text-base md:text-xl md:text-2xl tracking-tight font-ios text-[rgb(237,254,193)]/90 mt-8 md:mt-8 select-none">
-                Chat with AI that runs on your machine.
-              </p>
-              <div className="md:hidden text-xl font-bold tracking-tight text-[rgb(237,254,193)] mt-6 mb-0 leading-tight select-none space-y-3 pb-0">
-                <p className="text-3xl mb-0"><span className="text-3xl">NO</span> cloud.</p>
-                <p className="text-3xl mb-0"><span className="text-3xl">NO</span> accounts.</p>
-                <p className="text-3xl mb-0"><span className="text-3xl">NO</span> tracking.</p>
-              </div>
-              <p className="hidden md:block text-3xl md:text-5xl font-bold tracking-tight text-[rgb(237,254,193)] mt-6 leading-tight select-none">
-                <span className="text-5xl md:text-7xl">NO</span> cloud. <span className="text-5xl md:text-7xl">NO</span> accounts. <span className="text-5xl md:text-7xl">NO</span> tracking.
-              </p>
-
+                Download local-ai.zip
+              </a>
+              <a
+                href="#getting-started"
+                className="inline-flex items-center px-5 py-2.5 text-sm md:text-base font-semibold border border-[rgb(237,254,193)]/60 text-[rgb(237,254,193)] hover:border-[rgb(237,254,193)]"
+              >
+                Setup by OS
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="relative z-10 bg-[#0A1E5E] -mt-56 md:mt-0 pt-0 pb-12 md:py-20" style={{ background: 'color(display-p3 0.012 0.003 0.408)' }}>
-        <PatternLibrary />
-      </div>
-
-      <section className="relative z-10 py-12 md:py-16 px-4 md:px-6 bg-[#0A1E5E]" style={{ background: 'color(display-p3 0.012 0.003 0.408)' }}>
-        <ComparisonSection />
+      <section className="relative z-10 py-12 md:py-16 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold">What&apos;s New</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
+              <h3 className="text-xl font-semibold">Capability updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">Model picker with installed/library flow, chat export, and persistent local history.</p>
+            </article>
+            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
+              <h3 className="text-xl font-semibold">Control updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">System prompt and agent controls are surfaced in settings for explicit behavior control.</p>
+            </article>
+            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
+              <h3 className="text-xl font-semibold">Onboarding updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">Guided tour to help first-time users understand chat, models, and utilities quickly.</p>
+            </article>
+            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
+              <h3 className="text-xl font-semibold">Deployment updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">One zip package with platform launchers for Windows, macOS, and Linux environments.</p>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <div className="relative z-10 bg-[#0A1E5E]" style={{ background: 'color(display-p3 0.012 0.003 0.408)' }}>
-        <PatternLibrary randomize={true} seed={12345} />
-      </div>
+      <section className="relative z-10 py-6 md:py-10 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold mb-6">Capability showcase</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            <article className="border border-[rgb(237,254,193)]/25 bg-[#0C226A] overflow-hidden">
+              <div className="relative aspect-[16/10]">
+                <Image src="/screenshots/model-selector.png" alt="Model selector in Local AI Chat" fill className="object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">Model selector</h3>
+                <p className="text-sm text-[rgb(237,254,193)]/80 mt-1">Switch between installed models and library pulls without leaving the chat flow.</p>
+              </div>
+            </article>
+            <article className="border border-[rgb(237,254,193)]/25 bg-[#0C226A] overflow-hidden">
+              <div className="relative aspect-[16/10]">
+                <Image src="/screenshots/system-prompt.png" alt="System prompt and agent controls" fill className="object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">System prompt controls</h3>
+                <p className="text-sm text-[rgb(237,254,193)]/80 mt-1">Define assistant behavior centrally and keep responses aligned with your workflow.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-      <section className="relative z-10 py-12 md:py-20 px-4 md:px-6 md:pr-[480px] bg-[#0A1E5E] flex flex-col items-center md:items-start" style={{ background: 'color(display-p3 0.012 0.003 0.408)' }}>
+      <section id="getting-started" className="relative z-10 py-12 md:py-20 px-4 md:px-6 flex flex-col items-center md:items-start">
         <DownloadSection />
       </section>
 

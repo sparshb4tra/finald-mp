@@ -12,7 +12,7 @@ export default function Home() {
     }}>
       <section className="relative z-10 border-b border-[rgb(237,254,193)]/20">
         <div className="max-w-5xl mx-auto px-4 md:px-6 py-16 md:py-24">
-          <p className="text-[rgb(237,254,193)]/75 text-sm tracking-[0.18em] uppercase mb-6">Local AI Chat • Updated Release</p>
+          <p className="text-[rgb(237,254,193)]/75 text-sm tracking-[0.18em] uppercase mb-6">April Release • Version 2</p>
           <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight">Hey,</h1>
           <div className="mt-6 space-y-5 max-w-3xl">
             <p className="text-2xl md:text-4xl tracking-tight font-ios leading-tight">
@@ -45,24 +45,41 @@ export default function Home() {
 
       <section className="relative z-10 py-12 md:py-16 px-4 md:px-6">
         <div className="max-w-5xl mx-auto space-y-6">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold">What&apos;s New</h2>
+          <h2 className="text-2xl md:text-4xl font-serif font-bold">What&apos;s New in v2</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
               <h3 className="text-xl font-semibold">Capability updates</h3>
-              <p className="mt-2 text-[rgb(237,254,193)]/85">Model picker with installed/library flow, chat export, and persistent local history.</p>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">Model picker with installed/library flow, chat export, persistent local history, and portable conversations.</p>
+            </article>
+            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
+              <h3 className="text-xl font-semibold">Search + research updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">Exa integration for web-assisted responses when enabled, with local key storage and quick toggling from the header.</p>
             </article>
             <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
               <h3 className="text-xl font-semibold">Control updates</h3>
-              <p className="mt-2 text-[rgb(237,254,193)]/85">System prompt and agent controls are surfaced in settings for explicit behavior control.</p>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">System prompt and agent controls are surfaced in settings for explicit behavior control and predictable assistant behavior.</p>
             </article>
             <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
-              <h3 className="text-xl font-semibold">Onboarding updates</h3>
-              <p className="mt-2 text-[rgb(237,254,193)]/85">Guided tour to help first-time users understand chat, models, and utilities quickly.</p>
+              <h3 className="text-xl font-semibold">Experience + deployment updates</h3>
+              <p className="mt-2 text-[rgb(237,254,193)]/85">Guided tour onboarding, cleaner chat flow, and one zip package with launchers for Windows, macOS, and Linux.</p>
             </article>
-            <article className="border border-[rgb(237,254,193)]/25 p-5 bg-[#0C226A]">
-              <h3 className="text-xl font-semibold">Deployment updates</h3>
-              <p className="mt-2 text-[rgb(237,254,193)]/85">One zip package with platform launchers for Windows, macOS, and Linux environments.</p>
-            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative z-10 py-2 md:py-4 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto border border-[rgb(237,254,193)]/25 bg-[#0C226A] p-5 md:p-6">
+          <h3 className="text-xl md:text-2xl font-semibold">Core capabilities we offer</h3>
+          <p className="mt-2 text-[rgb(237,254,193)]/80 text-sm md:text-base">
+            Beyond model switching, Local AI Chat v2 is built to run as a complete local AI workstation.
+          </p>
+          <div className="mt-4 grid md:grid-cols-2 gap-x-8 gap-y-2 text-[rgb(237,254,193)]/90 text-sm md:text-base">
+            <p>• Local-first inference with Ollama</p>
+            <p>• Exa-assisted web context (optional)</p>
+            <p>• System prompt and agent behavior controls</p>
+            <p>• Persistent JSON chat history</p>
+            <p>• Exportable chat sessions</p>
+            <p>• Cross-platform launch scripts</p>
           </div>
         </div>
       </section>

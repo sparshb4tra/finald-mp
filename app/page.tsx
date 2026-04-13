@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Github, ShieldCheck, Rocket, Bot, FolderArchive, Router } from 'lucide-react'
 
 const highlights = [
@@ -22,6 +23,24 @@ const steps = [
   {
     title: 'Open local app',
     command: 'http://localhost:8000/chat.html',
+  },
+]
+
+const productScreens = [
+  {
+    src: '/screenshots/app-main.png',
+    title: 'Clean local chat workspace',
+    description: 'Focused layout with sidebar history, model chip, and zero-cloud workflow.',
+  },
+  {
+    src: '/screenshots/model-selector.png',
+    title: 'Built-in model selection',
+    description: 'Search and switch between installed or library models directly in-app.',
+  },
+  {
+    src: '/screenshots/guided-tour.png',
+    title: 'Guided onboarding tour',
+    description: 'A quick click-through tour that explains key UI areas for first-time users.',
   },
 ]
 
@@ -108,6 +127,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
+        <h2 className="text-3xl md:text-5xl font-serif font-bold">Product preview</h2>
+        <p className="mt-4 text-[rgb(237,254,193)]/80 max-w-3xl">
+          Real screenshots from the current build, placed to show core workflows at a glance.
+        </p>
+        <div className="mt-8 grid md:grid-cols-3 gap-5">
+          {productScreens.map((screen) => (
+            <article key={screen.src} className="border border-[rgb(237,254,193)]/25 bg-[#091650] overflow-hidden">
+              <div className="relative aspect-[16/10]">
+                <Image src={screen.src} alt={screen.title} fill className="object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{screen.title}</h3>
+                <p className="mt-2 text-sm text-[rgb(237,254,193)]/80">{screen.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
